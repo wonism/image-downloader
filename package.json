@@ -1,0 +1,26 @@
+{
+  "name": "image-downloader",
+  "version": "1.0.0",
+  "description": "Chrome extension for download images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonism/image-downloader.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "crx",
+    "image-download"
+  ],
+  "author": "Jaewon <yocee57@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonism/image-downloader/issues"
+  },
+  "homepage": "https://github.com/wonism/image-downloader#readme"
+}
+
