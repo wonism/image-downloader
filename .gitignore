@@ -21,3 +21,8 @@ bower_components/
 # idea
 .idea/
 
+# key
+extension.pem
+
+# zip
+*.zip

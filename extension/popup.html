@@ -2,11 +2,16 @@
 <html>
 <head>
   <style>
+    html {
+      height: 600px;
+      overflow: hidden;
+    }
     body {
       margin: 0;
       padding: 0;
-      width: 240px;
-      min-height: 400px;
+      width: 320px;
+      height: 600px;
+      max-height: 600px;
       background-color: transparent;
       overflow-x: hidden;
       overflow-y: scroll;
@@ -40,9 +45,11 @@
     .image-wrapper {
       position: relative;
       float: left;
-      width: 100px;
-      height: 100px;
+      margin-bottom: 4px;
+      width: 100%;
+      height: 160px;
       border-bottom: 1px solid #e5e5e5;
+      text-align: center;
       overflow: hidden;
     }
     .image {
@@ -56,33 +63,47 @@
       height: auto;
       border: none;
       outline: none;
+      cursor: -webkit-zoom-in;
     }
-    .btn {
+    .button {
       display: inline-block;
-      margin: 0 4px 0 0;
       padding: 0 4px;
-      margin-top: 4px;
-      height: 24px;
-      line-height: 24px;
+      height: 20px;
+      line-height: 20px;
       color: #fff;
-      background-color: #fe88a9;
-      border: none;
-      border-radius: 34px;
+      font-size: 10px;
+      border: 1px solid #fff;
       outline: none;
       cursor: pointer;
       text-decoration: blink;
     }
-    .circle {
-      border-radius: 50%;
+    .button:hover {
+      color: #fff;
+      background-color: #fe88a9;
+      border-color: #fe88a9;
+    }
+    .download-button {
+      position: absolute;
+      bottom: 8px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 10em;
+      font-weight: 700;
+    }
+    .no-images {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
     }
     ::-webkit-scrollbar, ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb { display: none; }
   </style>
 </head>
-<body>
+<body class="clearfix">
   <header>
     <h2>Image Downloader</h2>
   </header>
-  <main id="container"></main>
+  <main class="clearfix" id="container"></main>
   <script src="popup.js"></script>
 </body>
 </html>

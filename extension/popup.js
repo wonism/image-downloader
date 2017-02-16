@@ -1,13 +1,18 @@
 chrome.extension.onMessage.addListener(function(request, sender) {
   if (request.action === 'getResources') {
-    var str = '';
-    var resources = request.resources;
+    var container = document.getElementById('container'), str = '', resources = request.resources;
+
+    if (!resources.length) {
+      container.innerHTML = '<p class="no-images">There are no images.</p>';
+
+      return;
+    }
 
     for (var i = 0, len = resources.length; i < len; i++) {
       str += setTemplate(resources[i]);
     }
 
-    document.getElementById('container').innerHTML = str;
+    container.innerHTML = str;
   }
 });
 
@@ -16,15 +21,12 @@ window.onload = function () {
 };
 
 function setTemplate(src) {
-  return '<div class="row">' +
-    '<div class="image-wrapper">' +
+  return '<div class="image-wrapper">' +
+    '<a href="' + src + '" target="_blank">' +
     '<img class="image" src="' + src + '" />' +
-    '</div>' +
-    '<a class="btn pull-right" href="' + src + '" download>' +
-    'Download' +
     '</a>' +
-    '<a class="btn pull-right" href="' + src + '" target="_blank">' +
-    'Preview' +
+    '<a class="button download-button" href="' + src + '" download>' +
+    'DOWNLOAD' +
     '</a>' +
     '</div>';
 }
