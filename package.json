@@ -4,6 +4,7 @@
   "description": "Chrome extension for download images.",
   "main": "extension/popup.js",
   "scripts": {
+    "zip": "zip -r extension.zip extension",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
